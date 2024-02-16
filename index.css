@@ -1,0 +1,63 @@
+.forks {
+	height: 10px;
+	background-color: white;
+	width: 117px;
+	border-radius: 50px;
+	position: fixed;
+}
+
+.center {
+	background: black;
+    width: 15px;
+    height: 15px;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.wheel {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-evenly; 
+	position: absolute;
+	left: 45%;
+	height: 110px;
+	width: 110px;
+	border-radius: 50%;
+	background: #272727; 
+	border: 5px solid white;
+}
+
+.wheel-rotate {
+	animation-timing-function: linear;
+	animation-name: wheel-rotate;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	animation-duration: 15s;
+	box-shadow: 0px 0px 0px 7px #999 inset;
+}
+
+.wheel-box {
+	background-color: black;
+	display: flex;
+	align-items: center;
+	height: 200px;
+}
+
+.fork-1 {
+	transform: rotate(60deg);
+}
+
+.fork-2 {
+	transform: rotate(120deg);
+}
+
+@keyframes wheel-rotate {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg) translateZ(10px);
+	}
+}
