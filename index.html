@@ -11,10 +11,10 @@
 
 <body>
    <div class="wheel-box">
-    <div class="buttons-wheel">
+    <!-- <div class="buttons-wheel">
         <button class="inner-btn">Start</button>
-    </div>
-    <div class="wheel wheel-rotate">
+    </div> -->
+    <div id="wheel-div" class="wheel wheel-rotate">
         <div class="forks fork-1"></div>
        <div class="forks fork-2"></div>
        <div class="forks fork-3"></div>
@@ -23,6 +23,15 @@
    </div>
 </div>
 
-<script></script>
+<script>
+    window.onscroll = function () {
+    scrollRotate();
+};
+
+function scrollRotate() {
+    let wheel = document.getElementById("wheel-div");
+    wheel.style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
+}
+</script>
 </body>
 </html>
