@@ -30,7 +30,7 @@
 
 function scrollRotate() {
     let wheel = document.getElementById("wheel-div");
-    wheel.style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
+    wheel.style.transform = `translateX(${window.pageYOffset/2.9}%) rotate(${window.pageYOffset/2}deg)`;
 }
 </script>
 </body>
