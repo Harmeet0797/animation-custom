@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Portfolio Site</title>
 </head>
 
 <body>
-   <div class="wheel-box">
+
+<div class="wheel-box">
     <!-- <div class="buttons-wheel">
         <button class="inner-btn">Start</button>
     </div> -->
@@ -21,17 +23,44 @@
        <div class="forks fork-4"></div>
        <div class="center"></div>
    </div>
-</div>
+</div> 
+
+
+   
 
 <script>
     window.onscroll = function () {
     scrollRotate();
 };
 
+$(document).ready(function(){
+
+  // jQuery methods go here...
+    var dh = $(document).height();
+    var dw = $(".wheel-box").width();
+    console.log(dh);
+    console.log(dw);
+
+});
+
 function scrollRotate() {
     let wheel = document.getElementById("wheel-div");
-    wheel.style.transform = `translateX(${window.pageYOffset/2.9}%) rotate(${window.pageYOffset/2}deg)`;
+    var sr = Math.round(4/3);
+    console.log(sr);
+    wheel.style.transform = `translateX(${window.pageYOffset/2.38}px) rotate(${window.pageYOffset/2}deg)`;
 }
+
+    // const viewportSwitcher = document.getElementById("viewport-switcher")
+    // document.getElementById("mobile-view").addEventListener("click", ()=>{
+    //     console.log("click mob btn");
+    //     viewportSwitcher.style.width="768px";
+    // });
+
+    // document.getElementById("desktop-view").addEventListener("click", ()=>{
+    //     console.log("click desktop btn");
+    //      viewportSwitcher.style.width="1024px";
+    // });
+
 </script>
 </body>
 </html>

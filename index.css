@@ -49,8 +49,7 @@ body {
 	align-items: center;
 	height: 120px;
 	position: fixed;
-	max-width: 100%;
-	width: 100vw;
+	width: 100%;
 	overflow: hidden;
 }
 
@@ -62,6 +61,13 @@ body {
 	transform: rotate(120deg);
 }
 
+#viewport-switcher {
+	background-color: red;
+	height: 500px;
+	overflow: hidden;
+	width: 100%;
+}
+
 @keyframes wheel-rotate {
 	from {
 /*		transform: rotate(0deg);*/
@@ -71,4 +77,10 @@ body {
 	to {
 /*		transform: rotate(360deg);*/
 	}
+}
+
+@media (max-width: 767px) {
+	#viewport-switcher {
+	background-color: blue;
+}
 }
