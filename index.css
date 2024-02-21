@@ -10,6 +10,10 @@ body {
 	height: 4000px;
 }
 
+.custom-svg {
+	position: absolute;
+}
+
 .center {
 	background: black;
     width: 15px;
@@ -25,13 +29,12 @@ body {
 	justify-content: space-evenly; 
 	position: absolute;
 	left: 0;
-	right: 0;
+	top: 10;
 	height: 110px;
 	width: 110px;
 	border-radius: 50%;
 	background: #272727; 
 	border: 5px solid white;
-	overflow: hidden;
 }
 
 .wheel-rotate {
@@ -45,11 +48,10 @@ body {
 
 .wheel-box {
 	background-color: black;
-	display: flex;
 	align-items: center;
-	height: 120px;
+	height: 100vh;
 	position: fixed;
-	width: 100%;
+	width: calc(100%);
 	overflow: hidden;
 }
 
@@ -61,26 +63,39 @@ body {
 	transform: rotate(120deg);
 }
 
-#viewport-switcher {
-	background-color: red;
-	height: 500px;
-	overflow: hidden;
-	width: 100%;
-}
-
-@keyframes wheel-rotate {
-	from {
-/*		transform: rotate(0deg);*/
-/*		translate: -92vw;*/
-	}
-
-	to {
-/*		transform: rotate(360deg);*/
-	}
-}
-
 @media (max-width: 767px) {
 	#viewport-switcher {
 	background-color: blue;
+}
+
+.wheel-box {
+	height: 50px;
+	border-radius: 25px;
+}
+
+.wheel {
+	height: 45px;
+	width: 45px;
+	border: 2px solid white;
+}
+
+.forks {
+	height: 4px;
+	background-color: white;
+	width: 48px;
+	border-radius: 50px;
+	position: fixed;
+}
+
+.wheel-rotate {
+	box-shadow: 0px 0px 0px 4px #999 inset;
+}
+
+.center {
+	background: black;
+    width: 7px;
+    height: 7px;
+    z-index: 10;
+    border-radius: 50%;
 }
 }

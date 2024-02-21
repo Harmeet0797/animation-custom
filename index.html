@@ -16,6 +16,10 @@
     <!-- <div class="buttons-wheel">
         <button class="inner-btn">Start</button>
     </div> -->
+    <svg class="custom-svg" viewbox="0 0 200 100">
+        <path d="M0,10 C20,60 40,80 70,50 S80,20 100,10" stroke="white"></path>
+    </svg>
+
     <div id="wheel-div" class="wheel wheel-rotate">
         <div class="forks fork-1"></div>
        <div class="forks fork-2"></div>
@@ -25,9 +29,6 @@
    </div>
 </div> 
 
-
-   
-
 <script>
     window.onscroll = function () {
     scrollRotate();
@@ -36,30 +37,30 @@
 $(document).ready(function(){
 
   // jQuery methods go here...
-    var dh = $(document).height();
+   
+
+});
+
+var id = null;
+function scrollRotate() {
+     var dh = $(document).height();
     var dw = $(".wheel-box").width();
     console.log(dh);
     console.log(dw);
 
-});
+    if (window.innerWidth <= 425) {
+        var sr = dh/(dw);
+        var dv = 4;
+    }
 
-function scrollRotate() {
-    let wheel = document.getElementById("wheel-div");
-    var sr = Math.round(4/3);
-    console.log(sr);
-    wheel.style.transform = `translateX(${window.pageYOffset/2.38}px) rotate(${window.pageYOffset/2}deg)`;
+    else {
+    var sr = dh/(dw + $(".wheel").width() + 50);
+    var dv = 2;
 }
-
-    // const viewportSwitcher = document.getElementById("viewport-switcher")
-    // document.getElementById("mobile-view").addEventListener("click", ()=>{
-    //     console.log("click mob btn");
-    //     viewportSwitcher.style.width="768px";
-    // });
-
-    // document.getElementById("desktop-view").addEventListener("click", ()=>{
-    //     console.log("click desktop btn");
-    //      viewportSwitcher.style.width="1024px";
-    // });
+    let wheel = document.getElementById("wheel-div");
+    console.log(sr);
+    wheel.style.transform = `translateX(${window.pageYOffset/sr}px) rotate(${window.pageYOffset/dv}deg)`;
+}
 
 </script>
 </body>
